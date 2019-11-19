@@ -8,8 +8,10 @@ class City extends Model
 {
     protected $table = "cities";
 
+    protected $primaryKey = 'city_id';
+
     protected $fillable = [
-      'name',
+      'city_name',
       'provinces_id',
     ];
 
@@ -19,9 +21,9 @@ class City extends Model
         return $this->hasMany('App\Province');
     }
 
-    public function residences(){
+    public function users(){
         //Relacion de muchos usuarios de una persona
         //Lado de uno
-        return $this->belongsTo('App\Residence');
+        return $this->hasMany('App\User');
     }
 }

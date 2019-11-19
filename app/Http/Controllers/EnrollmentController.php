@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Enrollment;
+use App\Scholarship;
+use App\Division;
 use Illuminate\Http\Request;
 
 class EnrollmentController extends Controller
@@ -14,8 +16,10 @@ class EnrollmentController extends Controller
      */
     public function index()
     {
-        $enrollments = Enrollment::all();
-        return $enrollments;
+        $enrollments= Enrollment::paginate();
+        $scholarships= Scholarship::paginate();
+        $divisions= Division::paginate();
+        return view('matricula/list',compact('enrollments', 'scholarships', 'divisions'));
     }
 
     /**
@@ -25,7 +29,9 @@ class EnrollmentController extends Controller
      */
     public function create()
     {
-        //
+            $scholarships= Scholarship::all();
+            $divisions= Division::all();
+            return view('matricula/create',compact('scholarships','divisions'));
     }
 
     /**
@@ -36,8 +42,24 @@ class EnrollmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(),[
+            'number'   => ['required']
+            ]);
+            $datos = request()->all();                            //traes todos los parametros que le pase de la pagina de alta
+    
+            return redirect()->to('matricula');
     }
+
+    
+    public function storeEdit($id_matricula) {
+        $this->validate(request(),[
+        'number'   => ['required']
+        ]);
+
+        $datos = request()->all();
+
+        return redirect()->to('matricula');                      //retorna de nuevo a la pagina usuario
+      }
 
     /**
      * Display the specified resource.
@@ -56,9 +78,11 @@ class EnrollmentController extends Controller
      * @param  \App\Enrollment  $enrollment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Enrollment $enrollment)
-    {
-        //
+    public function edit($id_matricula) {
+        $enrollments=Enrollment::find($id_matricula);
+        $scholarships= Scholarship::all();
+        $divisions= Division::all();
+        return view('matricula/edit',compact('enrollments','scholarships','divisions'));
     }
 
     /**
@@ -79,8 +103,9 @@ class EnrollmentController extends Controller
      * @param  \App\Enrollment  $enrollment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Enrollment $enrollment)
+    public function delete($id_matricula)
     {
-        //
+        Enrollment::destroy($id_matricula);
+        return redirect()->to('matricula');
     }
 }

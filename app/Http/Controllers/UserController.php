@@ -21,7 +21,8 @@ class UserController extends Controller
     public function index()
     {
             $users= User::paginate();
-            return view('usuario/list',compact('users')); //Busca la ruta de la vista 
+            $cities= City::all();
+            return view('usuario/list',compact('users', 'cities')); //Busca la ruta de la vista 
     }
 
     /**
@@ -33,7 +34,7 @@ class UserController extends Controller
     {
         if(!(Auth::User()->is_student)){
         $provinces=Province::all();
-        $cities=City::all();
+        $cities=City::where('province_id', 3)->get();
         return view('usuario/create',compact('provinces','cities'));
         } else {
             return view('404');
@@ -52,18 +53,17 @@ class UserController extends Controller
             'name'   => ['required'],
             'email'    => ['required']
             ]);
-    
             $datos = request()->all();                            //traes todos los parametros que le pase de la pagina de alta
             $password=$this->randomPassword();
             $datos['password']=bcrypt($password);
     
             User::create($datos);//crea o actualiza el usuario
-            //return $password;
+            /*return $password;
             //Mail para la Contraseña//
             Mail::raw($password, function ($message) {
               $message->from('esdeu@gmail.com', 'Password "Esdeu"');
               $message->to('test@gmail.com')->subject('Bienvenido A ELECTRICA');
-            });
+            });*/
     
             return redirect()->to('usuario');
     }

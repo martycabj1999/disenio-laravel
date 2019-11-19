@@ -31,7 +31,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <b>{{ config('app.name', 'DISEÑO DE SISTEMAS') }}</b>
+                    <b>DISEÑO DE SISTEMAS</b>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -59,23 +59,12 @@
 
                                 <a class="nav-link dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor:pointer">Administración </a>
                                 <div class="dropdown-menu" >
-                                  @if(Auth::User()->is_student)
                                     <a class="dropdown-item" href="{{ url('usuario') }}"><i class="fa fa-user-alt fa-fw"></i> Usuarios</a>
-                                    <a class="dropdown-item" href="{{ url('perfil') }}"><i class="fa fa-user-tie fa-fw"></i> Perfiles</a>
-                                    <a class="dropdown-item" href="{{ url('empresa') }}"><i class="fa fa-users fa-fw"></i> Empresas</a>
-                                    <a class="dropdown-item" href="{{ url('energia') }}"><i class="fa fa-bolt fa-fw"></i> Energia</a>
-                                    <a class="dropdown-item" href="{{ url('tipous') }}"><i class="fa fa-clipboard-list fa-fw"></i> Tipo US</a>
-                                  @endif
-                                  <a class="dropdown-item" href="{{ url('archnormas') }}"><i class="fa fa-archive fa-fw"></i> Archivos de la norma</a>
-                                  <a class="dropdown-item" href="{{ url('lineaprod') }}"><i class="fa fa-boxes fa-fw"></i> Linea de Produccion</a>
-                                  <a class="dropdown-item" href="{{ url('unidadprod') }}"><i class="fa fa-box fa-fw"></i> Unidad de Produccion</a>
-                                  <a class="dropdown-item" href="{{ url('unidadserv') }}"><i class="fa fa-cog fa-fw"></i> Unidad de Servicio</a>
-                                  <a class="dropdown-item" href="{{ url('tipous') }}"><i class="fas fa-clipboard-list fa-fw"></i> Tipo de US</a>
-                                  <a class="dropdown-item" href="{{ url('factura') }}"><i class="fa fa-file-alt fa-fw"></i> Factura</a>
-                                  <a class="dropdown-item" href="{{ url('noconformidad') }}"><i class="fa fa-exclamation-triangle file-alt fa-fw"></i> No conformidad</a>
-                                  <a class="dropdown-item" href="{{ url('planaccion') }}"><i class="fas fa-file fa-fw"></i> Planes de Accion</a>
-                                  <a class="dropdown-item" href="{{ url('produccionreal') }}"><i class="fas fa-box fa-fw"></i> Produccion Real</a>
-                                  <a class="dropdown-item" href="{{ url('medidor') }}"><i class="fas fa-barcode fa-fw"></i> Medidor</a>
+                                    <a class="dropdown-item" href="{{ url('matricula') }}"><i class="fas fa-address-card  fa-fw"></i> Matriculas</a>
+                                    <a class="dropdown-item" href="{{ url('beca') }}"><i class="fa fa-boxes fa-fw"></i> Becas</a>
+                                    <a class="dropdown-item" href="{{ url('serviciocomplementario') }}"><i class="fa fa-cog fa-fw"></i> Servicio Complementario</a>
+                                    <a class="dropdown-item" href="{{ url('division') }}"><i class="fas fa-building fa-fw"></i> Division</a>
+                                    <a class="dropdown-item" href="{{ url('materia') }}"><i class="fas fa-book fa-fw"></i> Materia</a>
                                 </div>
 
                             </li>
