@@ -59,7 +59,7 @@
 
                                 <a class="nav-link dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor:pointer">Administración </a>
                                 <div class="dropdown-menu" >
-                                    <a class="dropdown-item" href="{{ url('usuario') }}"><i class="fa fa-user-alt fa-fw"></i> Usuarios</a>
+                                    <a class="dropdown-item" href="{{ url('usuario') }}"><i class="fa fa-user-alt fa-fw"></i> Alumnos</a>
                                     <a class="dropdown-item" href="{{ url('matricula') }}"><i class="fas fa-address-card  fa-fw"></i> Matriculas</a>
                                     <a class="dropdown-item" href="{{ url('beca') }}"><i class="fa fa-boxes fa-fw"></i> Becas</a>
                                     <a class="dropdown-item" href="{{ url('serviciocomplementario') }}"><i class="fa fa-cog fa-fw"></i> Servicio Complementario</a>

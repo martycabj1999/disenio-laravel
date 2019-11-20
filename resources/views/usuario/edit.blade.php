@@ -9,7 +9,7 @@
     <br>
     <br>
     <br>
-    <div class="card-header"><h2 align="center">Editar Usuario</h2></div>
+    <div class="card-header"><h2 align="center">Editar Alumno</h2></div>
 
       <div class="card-body">
         @if ($errors->any())

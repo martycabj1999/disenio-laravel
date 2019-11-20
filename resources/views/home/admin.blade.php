@@ -8,7 +8,7 @@
 
   <div class="row justify-content-center">
     <div class="col-auto panel-button">
-      <a href="{{ url('usuario') }}" type="button" class="btn btn-primary btn-lg" style="padding:30px;"><i class="fa fa-user-alt fa-fw fa-6x"></i><br><br><b>Usuario</b></a>
+      <a href="{{ url('usuario') }}" type="button" class="btn btn-primary btn-lg" style="padding:30px;"><i class="fa fa-user-alt fa-fw fa-6x"></i><br><br><b>Alumnos</b></a>
     </div>
     <div class="col-auto panel-button">
       <a href="{{ url('matricula') }}" type="button" class="btn btn-primary btn-lg" style="padding:30px;"><i class="fas fa-address-card fa-fw fa-6x"></i><br><br><b>Matricula</b></a>

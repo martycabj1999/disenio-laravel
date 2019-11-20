@@ -8,7 +8,7 @@
     <br>
     <br>
     <br>
-    <div class="card-header" align="center"><h2>Alta Usuario</h2></div>
+    <div class="card-header" align="center"><h2>Alta Alumno</h2></div>
 
       <div class="card-body">
         @if ($errors->any())

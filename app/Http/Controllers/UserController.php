@@ -19,10 +19,14 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {       
+        if(!(Auth::User()->is_student)){
             $users= User::paginate();
             $cities= City::all();
-            return view('usuario/list',compact('users', 'cities')); //Busca la ruta de la vista 
+            return view('usuario/list',compact('users', 'cities'));
+        } else {
+            return $this->show();
+        }
     }
 
     /**
@@ -54,7 +58,7 @@ class UserController extends Controller
             'email'    => ['required']
             ]);
             $datos = request()->all();                            //traes todos los parametros que le pase de la pagina de alta
-            $password=$this->randomPassword();
+            $password= 1234;
             $datos['password']=bcrypt($password);
     
             User::create($datos);//crea o actualiza el usuario
@@ -66,14 +70,6 @@ class UserController extends Controller
             });*/
     
             return redirect()->to('usuario');
-    }
-
-    private function randomPassword() {
-        $chars = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
-        $password = substr( str_shuffle( $chars ), 0, 8 );
-
-        return $password;
-
     }
 
     public function storeEdit($id_usuario) {
@@ -99,9 +95,12 @@ class UserController extends Controller
      * @param  \App\User  $User
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show()
     {
-        return User::where('id', $user->id)->get();
+        $user = User::where('id', (Auth::User()->id))->get();
+        $cities=City::all();
+
+        return view('usuario/list',compact('user', 'cities'));
     }
 
     /**

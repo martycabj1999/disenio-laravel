@@ -6,14 +6,15 @@
   <br>
   <br>
   <br>
-  <h2 align="center">Panel de Administracion - Usuarios</h2>
+  @if(!(Auth::User()->is_student))
+  <h2 align="center">Panel de Administracion - Alumnos</h2>
 
   <br>
-  @if(!(Auth::User()->is_student))
+  
     <div class="row justify-content-center">
-      <a href="{{ url('usuario/alta') }}" class="btn btn-success " role="button" aria-pressed="true">Crear Usuario</a>
+      <a href="{{ url('usuario/alta') }}" class="btn btn-success " role="button" aria-pressed="true">Crear Alumno</a>
     </div>
-  @endif
+  
   <br>
   <br>
 
@@ -31,15 +32,15 @@
         <td>{{$user->date_birth}}</td>
         <td>{{$user->street}} N°{{$user->number}}</td>
         <td>
-        @if(!(Auth::User()->is_student))
           <a href='{{ url('usuario') }}/editar/{{$user->id}}' title="Editar"><i class="fa fa-edit"></i></a>
           <a href='#' title="Eliminar" class="btn-delete"><i class="fa fa-times"></i></a>
-        @endif
         </td>
 
       </tr>
     @endforeach
   </table>
+  
+  
   {!! $users->render() !!}
   {!! Form::open(['url' => ['usuario', ':USERS_ID'], 'method' => 'DELETE', 'id' => 'frm_delete' ]) !!}
   {!! Form::close() !!}
@@ -68,5 +69,17 @@
     });
   });
 </script>
-
+@endif
+@if((Auth::User()->is_student))
+<h1 align="center">Tus Datos</h1>
+    @foreach($user as $user)
+        <h2>Nombre: {{$user->name}}</h2>
+        <h2>Apellido: {{$user->lastname}}</h2>
+        <h2>DNI: {{$user->dni}}</h2>
+        <h2>E-mail: {{$user->email}}</h2>
+        <h2>Telefono: {{$user->phone}}</h2>
+        <h2>Fecha de Nacimiento: {{$user->date_birth}}</h2>
+        <h2> Calle {{$user->street}} N°{{$user->number}}</h2>
+    @endforeach  
+  @endif
 @endsection
