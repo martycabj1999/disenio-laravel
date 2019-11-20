@@ -9,9 +9,11 @@
   <h2 align="center">Panel de Administracion - Usuarios</h2>
 
   <br>
-  <div class="row justify-content-center">
-    <a href="{{ url('usuario/alta') }}" class="btn btn-success " role="button" aria-pressed="true">Crear Usuario</a>
-  </div>
+  @if(!(Auth::User()->is_student))
+    <div class="row justify-content-center">
+      <a href="{{ url('usuario/alta') }}" class="btn btn-success " role="button" aria-pressed="true">Crear Usuario</a>
+    </div>
+  @endif
   <br>
   <br>
 
@@ -29,8 +31,10 @@
         <td>{{$user->date_birth}}</td>
         <td>{{$user->street}} N°{{$user->number}}</td>
         <td>
+        @if(!(Auth::User()->is_student))
           <a href='{{ url('usuario') }}/editar/{{$user->id}}' title="Editar"><i class="fa fa-edit"></i></a>
           <a href='#' title="Eliminar" class="btn-delete"><i class="fa fa-times"></i></a>
+        @endif
         </td>
 
       </tr>

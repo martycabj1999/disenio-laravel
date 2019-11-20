@@ -1,17 +1,17 @@
 @extends('layouts.app')
 @section('content')
-  <!-- Listado de Usuarios -->
+  <!-- Listado de Becas -->
 
   <br>
   <br>
   <br>
   <br>
-  <h2 align="center">Panel de Administracion - Matricula</h2>
+  <h2 align="center">Panel de Administracion - Materia</h2>
 
   <br>
   @if(!(Auth::User()->is_student))
   <div class="row justify-content-center">
-    <a href="{{ url('matricula/alta') }}" class="btn btn-success " role="button" aria-pressed="true">Crear Matricula</a>
+    <a href="{{ url('materia/alta') }}" class="btn btn-success " role="button" aria-pressed="true">Crear Materia</a>
   </div>
   @endif
   <br>
@@ -19,16 +19,17 @@
 
   <table class="table table-hover">
     <theader>
-    <tr><th>Numero </th><th>Fecha de Alta</th><th>ID Beca</th><th>ID Division</th>
-    @foreach($enrollments as $enrollment)
-      <tr data-id="{{$enrollment->id}}">
-        <td>{{$enrollment->number}}</td>
-        <td>{{$enrollment->date_up}}</td>
-        <td>{{$enrollment->scholarships_id}}</td>
-        <td>{{$enrollment->divisions_id}}</td>
+    <tr><th>ID </th><th>Nombre</th><th>Descripcion</th><th>Año</th><th>Departamento</th>
+    @foreach($matters as $matter)
+      <tr data-id="{{$matter->id}}">
+        <td>{{$matter->id}}</td>
+        <td>{{$matter->name}}</td>
+        <td>{{$matter->description}}</td>
+        <td>{{$matter->years_id}}</td>
+        <td>{{$matter->departments_id}}</td>
         <td>
         @if(!(Auth::User()->is_student))
-          <a href='{{ url('matricula') }}/editar/{{$enrollment->id}}' title="Editar"><i class="fa fa-edit"></i></a>
+          <a href='{{ url('materia') }}/editar/{{$matter->id}}' title="Editar"><i class="fa fa-edit"></i></a>
           <a href='#' title="Eliminar" class="btn-delete"><i class="fa fa-times"></i></a>
         @endif
         </td>
@@ -36,8 +37,8 @@
       </tr>
     @endforeach
   </table>
-  {!! $enrollments->render() !!}
-  {!! Form::open(['url' => ['matricula', ':ENROLLMENTS_ID'], 'method' => 'DELETE', 'id' => 'frm_delete' ]) !!}
+  {!! $matters->render() !!}
+  {!! Form::open(['url' => ['materia', ':MATERIAS_ID'], 'method' => 'DELETE', 'id' => 'frm_delete' ]) !!}
   {!! Form::close() !!}
 
 @endsection
@@ -53,7 +54,7 @@
       var id = $(row).data('id');
       var form = $('#frm_delete');
       var action = decodeURIComponent($(form).attr('action'));
-      var url = action.replace(':ENROLLMENTS_ID',id);
+      var url = action.replace(':MATERIAS_ID',id);
       var data = form.serialize();
       $.post(url, data, function(result) {
         console.log(result.msg);

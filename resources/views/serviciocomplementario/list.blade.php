@@ -9,9 +9,11 @@
   <h2 align="center">Panel de Administracion - Servicios Complementarios</h2>
 
   <br>
-  <div class="row justify-content-center">
-    <a href="{{ url('serviciocomplementario/alta') }}" class="btn btn-success " role="button" aria-pressed="true">Crear Servicio Complementario</a>
-  </div>
+  @if(!(Auth::User()->is_student))
+    <div class="row justify-content-center">
+      <a href="{{ url('serviciocomplementario/alta') }}" class="btn btn-success " role="button" aria-pressed="true">Crear Servicio Complementario</a>
+    </div>
+  @endif
   <br>
   <br>
 
@@ -25,8 +27,10 @@
         <td>{{$complementaryService->amount}}</td>
         <td>{{$complementaryService->description}}</td>
         <td>
+        @if(!(Auth::User()->is_student))
           <a href='{{ url('serviciocomplementario') }}/editar/{{$complementaryService->id}}' title="Editar"><i class="fa fa-edit"></i></a>
           <a href='#' title="Eliminar" class="btn-delete"><i class="fa fa-times"></i></a>
+        @endif
         </td>
 
       </tr>

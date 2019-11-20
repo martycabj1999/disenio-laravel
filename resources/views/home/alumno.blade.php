@@ -14,7 +14,7 @@
       <a href="{{ url('matricula') }}" type="button" class="btn btn-primary btn-lg" style="padding:30px;"><i class="fas fa-address-card fa-fw fa-6x"></i><br><br><b>Matricula</b></a>
     </div>
   </div>
-
+  <br>  
   <div class="row justify-content-center">
     <div class="col-auto panel-button">
       <a href="{{ url('beca') }}" type="button" class="btn btn-primary btn-lg" style="padding:30px;"><i class="fa fa-boxes fa-fw fa-6x"></i><br><br><b>Becas</b></a>
@@ -23,7 +23,7 @@
       <a href="{{ url('serviciocomplementario') }}" type="button" class="btn btn-primary btn-lg" style="padding:30px;"><i class="fa fa-cog fa-fw fa-6x"></i><br><br><b>Servicio Complementario</b></a>
     </div>
   </div>
-
+  <br>
   <div class="row justify-content-center">
     <div class="col-auto panel-button">
       <a href="{{ url('division') }}" type="button" class="btn btn-primary btn-lg" style="padding:30px;"><i class="fas fa-building fa-fw fa-6x"></i><br><br><b>Division</b></a>

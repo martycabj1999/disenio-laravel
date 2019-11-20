@@ -6,37 +6,36 @@
   <br>
   <br>
   <br>
-  <h2 align="center">Panel de Administracion - Becas</h2>
+  <h2 align="center">Panel de Administracion - Division</h2>
 
   <br>
-  @if(!(Auth::User()->is_student))
-  <div class="row justify-content-center">
-    <a href="{{ url('beca/alta') }}" class="btn btn-success " role="button" aria-pressed="true">Crear Beca</a>
-  </div>
-  @endif
+  <!--<div class="row justify-content-center">
+    <a href="{{ url('division/alta') }}" class="btn btn-success " role="button" aria-pressed="true">Crear Division</a>
+  </div>-->
   <br>
   <br>
 
   <table class="table table-hover">
     <theader>
-    <tr><th>ID </th><th>Nombre</th><th>Descuento</th>
-    @foreach($scholarships as $scholarship)
-      <tr data-id="{{$scholarship->id}}">
-        <td>{{$scholarship->id}}</td>
-        <td>{{$scholarship->name}}</td>
-        <td>{{$scholarship->discount}}</td>
+    <tr><th>ID </th><th>Salon</th><th>Aula</th><th>Año</th>
+    @foreach($divisions as $division)
+      <tr data-id="{{$division->id}}">
+        <td>{{$division->id}}</td>
+        <td>{{$division->classroom}}</td>
+        <td>{{$division->name}}</td>
+        <td>{{$division->years_id}}</td>
         <td>
-        @if(!(Auth::User()->is_student))
-          <a href='{{ url('beca') }}/editar/{{$scholarship->id}}' title="Editar"><i class="fa fa-edit"></i></a>
+          @if(!(Auth::User()->is_student))
+          <!--<a href='{{ url('division') }}/editar/{{$division->id}}' title="Editar"><i class="fa fa-edit"></i></a>-->
           <a href='#' title="Eliminar" class="btn-delete"><i class="fa fa-times"></i></a>
-        @endif
+          @endif
         </td>
 
       </tr>
     @endforeach
   </table>
-  {!! $scholarships->render() !!}
-  {!! Form::open(['url' => ['beca', ':BECAS_ID'], 'method' => 'DELETE', 'id' => 'frm_delete' ]) !!}
+  {!! $divisions->render() !!}
+  {!! Form::open(['url' => ['division', ':DIVISIONES_ID'], 'method' => 'DELETE', 'id' => 'frm_delete' ]) !!}
   {!! Form::close() !!}
 
 @endsection
@@ -52,7 +51,7 @@
       var id = $(row).data('id');
       var form = $('#frm_delete');
       var action = decodeURIComponent($(form).attr('action'));
-      var url = action.replace(':BECAS_ID',id);
+      var url = action.replace(':DIVISIONES_ID',id);
       var data = form.serialize();
       $.post(url, data, function(result) {
         console.log(result.msg);

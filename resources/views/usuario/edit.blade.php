@@ -89,7 +89,6 @@
                 @endforeach
               </select>
             </div>  
-          <div class="row">
             <div class="col-12 col-md-6">
               <label for="cities_id">Ciudad:</label>
               <select class="form-control" id="cities_id" name="cities_id">

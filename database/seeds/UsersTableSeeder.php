@@ -109,5 +109,13 @@ class UsersTableSeeder extends Seeder
             'name'=>'C',
             'years_id'=>'3',
         ]);
+
+        DB::table('departments')->insert([
+            'name'=>'Basicas',
+        ]);
+
+        DB::table('departments')->insert([
+            'name'=>'Sistemas',
+        ]);
     }
 }

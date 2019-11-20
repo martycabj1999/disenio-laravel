@@ -46,20 +46,18 @@ class EnrollmentController extends Controller
             'number'   => ['required']
             ]);
             $datos = request()->all();                            //traes todos los parametros que le pase de la pagina de alta
-    
+            Enrollment::create($datos);
             return redirect()->to('matricula');
     }
 
     
     public function storeEdit($id_matricula) {
-        $this->validate(request(),[
-        'number'   => ['required']
-        ]);
 
         $datos = request()->all();
-
+        unset($datos['_token']);
+        Enrollment::where('id', $id_matricula)->update($datos);
         return redirect()->to('matricula');                      //retorna de nuevo a la pagina usuario
-      }
+    }
 
     /**
      * Display the specified resource.
@@ -79,10 +77,10 @@ class EnrollmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id_matricula) {
-        $enrollments=Enrollment::find($id_matricula);
+        $enrollment=Enrollment::find($id_matricula);
         $scholarships= Scholarship::all();
         $divisions= Division::all();
-        return view('matricula/edit',compact('enrollments','scholarships','divisions'));
+        return view('matricula/edit',compact('enrollment','scholarships','divisions'));
     }
 
     /**

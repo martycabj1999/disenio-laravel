@@ -57,3 +57,19 @@ Route::get('/matricula/alta', 'EnrollmentController@create');
 Route::get('/matricula/editar/{id_matricula}', 'EnrollmentController@edit')->where('id_matricula','[0-9]+');
 Route::post('/matricula/{id_matricula}', 'EnrollmentController@storeEdit')->where('id_matricula','[0-9]+');
 Route::delete('/matricula/{id_matricula}', 'EnrollmentController@delete')->where('id_matricula','[0-9]+');
+
+//Rutas para materia
+Route::get('/materia', 'MatterController@index');
+Route::post('/materia', 'MatterController@store');
+Route::get('/materia/alta', 'MatterController@create');
+Route::get('/materia/editar/{id_materia}', 'MatterController@edit')->where('id_materia','[0-9]+');
+Route::post('/materia/{id_materia}', 'MatterController@storeEdit')->where('id_materia','[0-9]+');
+Route::delete('/materia/{id_materia}', 'MatterController@delete')->where('id_materia','[0-9]+');
+
+//Rutas para division
+Route::get('/division', 'DivisionController@index');
+Route::post('/division', 'DivisionController@store');
+Route::get('/division/alta', 'DivisionController@create');
+Route::get('/division/editar/{id_division}', 'DivisionController@edit')->where('id_division','[0-9]+');
+Route::post('/division/{id_division}', 'DivisionController@storeEdit')->where('id_division','[0-9]+');
+Route::delete('/division/{id_division}', 'DivisionController@delete')->where('id_division','[0-9]+');

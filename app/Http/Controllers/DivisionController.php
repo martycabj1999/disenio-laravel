@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Division;
+use App\Year;
 use Illuminate\Http\Request;
 
 class DivisionController extends Controller
@@ -14,8 +15,9 @@ class DivisionController extends Controller
      */
     public function index()
     {
-        $divisions = Division::all();
-        return $divisions;
+        $divisions= Division::paginate();
+        $years= Year::paginate();
+        return view('division/list',compact('divisions', 'years'));
     }
 
     /**
@@ -79,8 +81,9 @@ class DivisionController extends Controller
      * @param  \App\Division  $division
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Division $division)
+    public function delete($id_division)
     {
-        //
+        Division::destroy($id_division);
+        return redirect()->to('division');
     }
 }
