@@ -29,7 +29,7 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 //Rutas para usuarios
 Route::get('/usuario', 'UserController@index');
 Route::post('/usuario', 'UserController@store');
-Route::post('/usuario', 'UserController@show');
+Route::post('/usuario/datos', 'UserController@show');
 Route::get('/usuario/alta', 'UserController@create');
 Route::get('/usuario/editar/{id_usuario}', 'UserController@edit')->where('id_usuario','[0-9]+');
 Route::post('/usuario/{id_usuario}', 'UserController@storeEdit')->where('id_usuario','[0-9]+');

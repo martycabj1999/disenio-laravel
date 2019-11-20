@@ -35,7 +35,6 @@
           <a href='{{ url('usuario') }}/editar/{{$user->id}}' title="Editar"><i class="fa fa-edit"></i></a>
           <a href='#' title="Eliminar" class="btn-delete"><i class="fa fa-times"></i></a>
         </td>
-
       </tr>
     @endforeach
   </table>

@@ -19,7 +19,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {       
+    {     
         if(!(Auth::User()->is_student)){
             $users= User::paginate();
             $cities= City::all();
@@ -57,10 +57,10 @@ class UserController extends Controller
             'name'   => ['required'],
             'email'    => ['required']
             ]);
-            $datos = request()->all();                            //traes todos los parametros que le pase de la pagina de alta
+            $datos = request()->all();                          //traes todos los parametros que le pase de la pagina de alta
             $password= 1234;
             $datos['password']=bcrypt($password);
-    
+            $datos['is_student']= true;
             User::create($datos);//crea o actualiza el usuario
             /*return $password;
             //Mail para la Contraseña//
@@ -85,7 +85,7 @@ class UserController extends Controller
         User::where('id', $id_usuario)->update($datos);//crea o actualiza el usuario
         //return $password;
         //Mail para la Contraseña//
-
+        
         return redirect()->to('usuario');                      //retorna de nuevo a la pagina usuario
       }
 
