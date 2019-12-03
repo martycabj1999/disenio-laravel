@@ -38,7 +38,7 @@ class UserController extends Controller
     {
         if(!(Auth::User()->is_student)){
         $provinces=Province::all();
-        $cities=City::where('province_id', 3)->get();
+        $cities=City::all();
         return view('usuario/create',compact('provinces','cities'));
         } else {
             return view('404');

@@ -12,6 +12,7 @@ class Enrollment extends Model
       'date_up',
       'number',
       'scholarships_id',
+      'users_id',
       'divisions_id',
     ];
 
@@ -20,6 +21,13 @@ class Enrollment extends Model
     //  Lado de uno
     {
         return $this->hasMany('App\Quota');
+    }
+
+    public function users()
+    //  Relacion de Uno a Muchos
+    //  Lado de uno
+    {
+        return $this->hasMany('App\User');
     }
 
     public function service_enrollments()

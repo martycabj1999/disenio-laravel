@@ -81,9 +81,9 @@
             <label for="cities_id">Ciudad</label>
             <select class="form-control" id="cities_id" name="cities_id" >
               <option value="">Seleccione una Ciudad</option>
-              @foreach($cities as $city)
+              <!--@foreach($cities as $city)
                 <option value="{{ $city->city_id }}">{{ $city->city_name }}</option>
-              @endforeach
+              @endforeach-->
             </select>
           </div>
 
@@ -116,8 +116,33 @@
         </div>
 
       </form>
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+$(document).ready(function() {
+  $("#provinces_id").change(function () {
+    var prov_id = this.value;
+    console.log(prov_id);
+    $.get('{{url('api/cities')}}')
+    .done(function(data){
+      console.log(data[3]);
+      option='<option value="">Seleccione una Ciudad</option>';
+      for ( var i = 0, l = 19000; i < l; i++ ) {
+      if(data[i].province_id == prov_id) {
+        console.log(data[i].province_name);
+        option+= '<option value="'+data[i].city_id+'">'+data[i].city_name+'</option> '
+      }
+      }
+      $('#cities_id').html(option);
+    });
+    
+  })
+});
+
+</script>
     </div>
   </div>
 
 </div>
+
+
 @endsection

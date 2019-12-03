@@ -18,6 +18,7 @@ class CreateEnrollmentsTable extends Migration
             $table->integer('number');
             $table->date('date_up');
             $table->bigInteger('scholarships_id')->nullable()->unsigned();
+            $table->bigInteger('users_id')->nullable()->unsigned();
             $table->bigInteger('divisions_id')->nullable()->unsigned();
             $table->timestamps();
         });

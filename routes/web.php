@@ -54,6 +54,7 @@ Route::delete('/serviciocomplementario/{id_servicio_complementario}', 'Complemen
 //Rutas para matricula
 Route::get('/matricula', 'EnrollmentController@index');
 Route::post('/matricula', 'EnrollmentController@store');
+Route::post('/matricula/datos', 'EnrollmentController@show');
 Route::get('/matricula/alta', 'EnrollmentController@create');
 Route::get('/matricula/editar/{id_matricula}', 'EnrollmentController@edit')->where('id_matricula','[0-9]+');
 Route::post('/matricula/{id_matricula}', 'EnrollmentController@storeEdit')->where('id_matricula','[0-9]+');

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Enrollment;
 use App\Scholarship;
 use App\Division;
+use App\User;
+
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class EnrollmentController extends Controller
@@ -16,10 +19,15 @@ class EnrollmentController extends Controller
      */
     public function index()
     {
+        if(!(Auth::User()->is_student)){
         $enrollments= Enrollment::paginate();
         $scholarships= Scholarship::paginate();
         $divisions= Division::paginate();
-        return view('matricula/list',compact('enrollments', 'scholarships', 'divisions'));
+        $users= User::all();
+        return view('matricula/list',compact('enrollments', 'users', 'scholarships', 'divisions'));
+        } else {
+            return $this->show();
+        }
     }
 
     /**
@@ -31,7 +39,8 @@ class EnrollmentController extends Controller
     {
             $scholarships= Scholarship::all();
             $divisions= Division::all();
-            return view('matricula/create',compact('scholarships','divisions'));
+            $users= User::all();
+            return view('matricula/create',compact('scholarships','users','divisions'));
     }
 
     /**
@@ -65,9 +74,13 @@ class EnrollmentController extends Controller
      * @param  \App\Enrollment  $enrollment
      * @return \Illuminate\Http\Response
      */
-    public function show(Enrollment $enrollment)
+    public function show()
     {
-        return Enrollment::where('id', $enrollment->id)->get();
+        $enrollment = Enrollment::where('users_id', (Auth::User()->id))->get();
+        $scholarships= Scholarship::all();
+        $user = User::where('id', (Auth::User()->id))->get();
+        $divisions= Division::all();
+        return view('matricula/list',compact('enrollment', 'user', 'divisions', 'scholarships'));
     }
 
     /**
@@ -80,7 +93,8 @@ class EnrollmentController extends Controller
         $enrollment=Enrollment::find($id_matricula);
         $scholarships= Scholarship::all();
         $divisions= Division::all();
-        return view('matricula/edit',compact('enrollment','scholarships','divisions'));
+        $users= User::all();
+        return view('matricula/edit',compact('enrollment','users','scholarships','divisions'));
     }
 
     /**

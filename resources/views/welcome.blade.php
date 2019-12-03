@@ -23,385 +23,156 @@
     <link href="{{ asset('css/scrolling-nav.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+      <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/landing-page.min.css" rel="stylesheet">
   </head>
 
-  <body id="page-top">
+  <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="{{ url('/')}}"><b>DISEÑO DE SISTEMAS</b></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#inicio">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#norma">Norma</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#herramienta">Herramienta</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#trabajo">Trabajos</a>
-            </li>
-
-             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#staff">Staff</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{{ url('login')}}"><b>Ingresar</b></a>
-            </li>
-          </ul>
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Diseño de sistemas</a>
+            <a class="btn btn-primary" href="/login">Login</a>
         </div>
-      </div>
     </nav>
 
-    <header class="bg-success text-white">
-      <div class="container text-center">
-        <h1><img src="image/logo44.png" height="110"></h1>
-        <!-- <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>-->
-      </div>
+    <!-- Masthead -->
+    <header class="masthead text-white text-center">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-5">Trabajo de campo 3° año!</h1>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                </div>
+            </div>
+        </div>
     </header>
 
-    <section id="inicio">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 mx-auto">
-            <h2>Introducción</h2>El consumo de energía creciente por parte de la humanidad, en pos de mejores condiciones de vida y confort, hace necesario que se desarrollen mecanismos de ahorro de la energía en busca de un uso racional y sustentable de la misma en los sistemas productivos. Los sistemas de gestión de la energía buscan impactar directamente en la productividad y competitividad de las organizaciones productivas de bienes y servicios.
-
-Para promover la implementación de sistemas de gestión energéticos en las pequeñas y medianas empresas se ha desarrollado una metodología que permite realizar el análisis energético del proceso, la evaluación de los consumos específicos de los equipos, la evaluación de las mejoras energéticas sugeridas, el ahorro energético alcanzado y la reducción de las emisiones de gases contaminantes obtenidas.
-
-Como base del método, se utiliza la norma ISO-IRAM 50001, la cual es un instrumento que busca la eficiencia y el ahorro energético en las organizaciones, impactando en la estructura de costos de la organización. el modelo que sigue la norma es el proceso de Planificar Hacer Verificar Actuar para gestionar y mejorar las operaciones y el rendimiento de la organización.
-</div>
-<div class="col-md-6 mx-auto">
-<h2>Actividades: Implementación Metodológica</h2>
-  <p>Algunas de las Actividades desarrolladas durante la implementación de la Metodología se indican en la siguiente tabla</p>
-  <table align="center" border="3px" cellpadding="1" cellspacing="1" class="misombra tablesaw tablesaw-stack" style="background:#eeeeee; width:50%" data-tablesaw-mode="stack"><tbody><tr><td class="rtecenter">
-          <strong>Análisis de la Compra de Energéticos</strong>
-        </td>
-</tr><tr bgcolor="white"><td class="rtecenter">
-          Relevamiento Inicial del Consumo &amp; Uso Energético mediante Auditorías Energéticas
-        </td>
-</tr><tr><td class="rtecenter">
-          <strong>Determinación de la Línea Base e Indicadores Energéticos más Adecuados</strong>
-        </td>
-</tr><tr bgcolor="white"><td class="rtecenter">
-          Desarrollo de los Planes de Mejora
-        </td>
-</tr><tr><td class="rtecenter">
-          <strong>Capacitación del Personal en Temas de Eficiencia Energética y Auditorías Energéticas</strong>
-        </td>
-</tr></tbody></table>
-</div>
-
-          </div>
-        </div>
-
-    </section>
-
-    <section id="norma" style="background-color:#bbeebb">
-      <div class="container" >
-        <div class="row">
-          <div class="col-md-12 mx-auto">
-            <h2>Norma IRAM ISO 50001</h2>
-            <p>
-            La <b>Norma ISO 50001</b> fue desarrollada por ISO cuando surge la necesidad de contar con un estándar internacional para responder eficazmente al cambio climático debido a los distintos estándares de gestión de la energía.
-            </p>
-            <p>
-            Fue preparada por el Comité de Proyecto ISO PC 242, donde participaron expertos de normativas de 44 países miembros de ANSI y de la ABNT con colaboración de organizaciones como UNIDO y el Consejo Mundial de la Energía.
-            </p>
-            <p>
-            Fue presentada como Norma ISO 50001, el 17 de junio de 2011 en el CICG.
-            </p>
-            <p>
-            China, Dinamarca, Irlanda, Japón, Korea, Holanda, Suecia, Tailanda, USA e inclusive la CE la están empleando para implementar sus propias normas. En el mismo 2011, en Argentina la IRAM la adopta para establecer la gestión de la energía a través de las <b>BUENAS PRÁCTICAS</b> de uso eficiente de la energía.
-            </p>
-            <p>
-            La norma, también soporta elementos comunes a otras normas de sistemas de gestión ISO para asegurar su comtabilidad con <b>ISO 9000</b> sobre la gestión de calidad adoptada por muchas organizaciones y por la <b>ISO 14001</b> sobre gestión ambiental.
-            </p>
-            <div class="bg-success">
-              <em >
-                La Norma IRAM ISO 50001:2011 especifica los requisitos para establecer, implementar. mantener y mejorar un sistema de gestión de la energía con el propósito de permitir a una organización, contar con un enfoque sistemático para alcanzar una mejora continuaen su desempeño energético, incluyendo la eficiencia energética, el uso y el consumo de energía. Especifica los requisitos aplicables al uso y consumo de la energía, incluyendo la medición, documentación e información, las prácticas para el diseño y adquisisicón de equipos, sistemas, procesos y personal que contribuyen al desempeño energético.
-              </em>
-            </div>
-<br>
-
-            <nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><b>Objetivos</b></a>
-    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><b>Beneficio</b></a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><b>Implementación</b></a>
-  </div>
-</nav>
-<div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active bg-light" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" ><br>
-    <div class="row">
-      <div class="col-md-1">
-        <img src="{{ url('image/fin.svg') }}">
-      </div>
-      <div class="col-md-11">
-          <h4 class="page-title">Objetivo General</h4>
-<p>Ser una herramienta de soporte funcional para organizaciones del sector público y privado, con el fin de aumentar su eficiencia energética, orientada a reducir los costos y consumos de la energía a través de buenas prácticas en la gestión de la energía.
-
-Esto es posible de implementar en cualquier organización que emplee el método de la mejora continua en su gestión energética.
-</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-1">
-        <img src="{{ url('image/objetivos.svg') }}">
-      </div>
-      <div class="col-md-11">
-        <h4 class="page-title">Objetivo Específicos</h4>
-        <ul>
-            <li>Ayudar a las organizaciones a mejorar el consumo energético.
-        </li>
-        <li>Facilitar la gestión de los recursos energéticos.
-        </li>
-        <li>Promover las buenas prácticas de gestión energética y reforzar el buen uso de la energía siguiendo las pautas de gestión de la organización.
-        </li>
-        <li>Ayudar a las organizaciones a evaluar y priorizar la implementación de nuevas tecnologías de eficiencia energética.
-        </li>
-        <li>Promover proyectos de reducción de emisiones de gases de efecto invernadero.
-        </li>
-        <li>Permitir la integeación con otros sistemas de gestión, como medio ambiente, Salud y Seguridad.
-        </li>
-
-        </ul>
-      </div>
-    </div>
-  
-  </div>
-  <div class="tab-pane fade bg-light" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-        <h4 class="page-title">Beneficios</h4>
-<p>Análogamente como ocurre con todas las normativas ISO, el standard IRAM ISO 50001 aplica para cualquier tipo de organización, no importa su tamaño, actividad o localización.
-
-Además, no se fijan objetivos de la eficiencia energética, sino que establece un Método de gestión de la energía que propone una base para luego generar un sistema de mejora continua con el propósito de que se implemente de acorde al ritmo, capacidad y contexto de cada organización y por consecuencia, reducir la emisión de gases del efecto invernadero.</p>
-  <tbody><tr><td class="rtecenter">
-                <img alt="" height="80" src="{{ url('image/eficiencia3.svg') }}" width="80" /><strong>Mayor Eficiencia Energética</strong>
-</td>
-<td class="rtecenter">
-                <img alt="" height="80" src="{{ url('image/ahorro.svg') }}" width="80" /><strong>Ahorro de Costos</strong>
-</td>
-<td class="rtecenter">
-                <img alt="" height="80" src="{{ url('image/certificar.svg') }}" width="80" /><strong>Garantía Medioambiental</strong>
-</td>
-</tr><tr><td>
-<ul><li>
-                        Menos es Más</li>
-<li>
-                        Más Competitividad.</li>
-</ul></td>
-<td>
-<ul><li>
-                        Reducción Costos</li>
-<li>
-                        Inversión Inteligente</li>
-</ul></td>
-<td>
-<ul><li>
-                        Certificar Acredita</li>
-<li>
-                        Compromiso Sustentable</li>
-</ul></td>
-</tr>
-        </tbody>
-
-
-
-
-  </div>
-
-
-  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
-</div>
-
-
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="herramienta">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 mx-auto">
-            <h2>Herramienta</h2>
-            <h5>Las principales funcionalidades ofrecidas por nuestra herramienta interna quedan divididas en 3 Niveles.</h5>
+    <!-- Icons Grid -->
+    <section class="features-icons bg-light text-center">
+        <div class="container">
             <div class="row">
-                <div class="col">
-                   <i  class="material-icons" >
-                        people
-                    </i>
-                    <i  class="material-icons" >
-                        account_balance
-                    </i>
-                    <i  class="material-icons" >
-                        home
-                    </i>
-                    <i  class="material-icons" >
-                        folder
-                    </i>
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex">
+                            <i class="icon-screen-desktop m-auto text-primary"></i>
+                        </div>
+                        <h3>Full Responsive</h3>
+                        <p class="lead mb-0">La pagina la diseñamos para todo tipo de dispositivos!</p>
                     </div>
                 </div>
-
-
-            <p class="lead">Nivel I: Organigrama - Política - Alcance</p>
-            <p class="lead">Nivel II: Facturas - Diagramas - Consumos Específicos</p>
-            <p class="lead">Nivel III: Línea Base - Indicadores - Planes Acción</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-     <section id="trabajo" style="background-color:#bbeebb">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 mx-auto">
-            <h2><i  class="material-icons" >
-                        folder
-                    </i> Trabajos</h2>
-            <h5>En la actualidad, haciendo uso de nuestra herramienta web, estamos asesorando a:</h5>
- 
-            <div class="row">
-                <div class="col">
-                    <div class="card" style="width: 300px;">
-                        <img class="card-img-top" src="image/facu4.svg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">
-                            Universidad Tecnológica Nacional
-                            Facultad Regional La Plata</p>
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex">
+                            <i class="icon-layers m-auto text-primary"></i>
                         </div>
+                        <h3>PWA</h3>
+                        <p class="lead mb-0">Creamos una Progresive Web App!</p>
                     </div>
                 </div>
-               <!-- <div class="col">
-                    <div class="card" style="width: 300px;">
-                        <img class="card-img-top" src="image/pla.jpeg"  alt="Card image cap" >
-                        <div class="card-body">
-                            <p class="card-text">
-                                Parque Industrial Plátanos
-                                Etapa I: grupo de 15 organizaciones
-                            </p>
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex">
+                            <i class="icon-check m-auto text-primary"></i>
                         </div>
+                        <h3>Facil uso</h3>
+                        <p class="lead mb-0">El diseño de las vistas esta hecho para que navegacion sea intuitiva!</p>
                     </div>
                 </div>
             </div>
--->
-
- 
-
-          </div>
         </div>
-      </div>
     </section>
 
-<section id="staff">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 mx-auto">
-            <h2>Staff</h2>
-            <h5>Las principales funcionalidades ofrecidas por nuestra herramienta interna quedan divididas en 3 Niveles.</h5>
-            <div class="row">
-                <div class="col">
-                   <i  class="material-icons" >
-                        people
-                    </i>
-                    <i  class="material-icons" >
-                        account_balance
-                    </i>
-                    <i  class="material-icons" >
-                        home
-                    </i>
-                    <i  class="material-icons" >
-                        folder
-                    </i>
-                    </div>
+    <!-- Image Showcases -->
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>Diseño Full Responsive</h2>
+                    <p class="lead mb-0">La pagina se verá genial en cualquier dispositivo, ya sea un teléfono, tableta o computadora de escritorio, la página se comportará de manera receptiva!</p>
                 </div>
-
-
-            <p class="lead">Nivel I: Organigrama - Política - Alcance</p>
-            <p class="lead">Nivel II: Facturas - Diagramas - Consumos Específicos</p>
-            <p class="lead">Nivel III: Línea Base - Indicadores - Planes Acción</p>
-          </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+                <div class="col-lg-6 my-auto showcase-text">
+                    <h2>PWA</h2>
+                    <p class="lead mb-0">Una PWA utiliza las últimas tecnologías disponibles en los navegadores para ofrecer una experiencia en móviles lo más parecida a la de una aplicación nativa!</p>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>Facil uso</h2>
+                    <p class="lead mb-0">Tener en cuenta la usabilidad a la hora de diseñar, desarrollar y optimizar un sitio web aporta una serie de beneficios!</p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Footer 
-    <footer class="py-5 bg-light">
-<<<<<<< HEAD
-     <div class="row">
-        <div class="col">
-              <img src="image/logofooter.png " alt="" height="78" width="118">
-        <p class="m-0 text-center ">Copyright &copy; <a href="http://www.lines.edu.ar">LINES</a> 2018</p>
-        </div>        
-     </div>
-    
-
-      <! /.container -->
-    </footer>
-      <div class="container">
-      <div style="float:left;">
-
-      </div>
-
-      </div>
-
-
-    </footer>
-    
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col"><img src="image/logofooter.png " alt="" height="78" width="118"></div>
-          <div class="col"><p class="m-0 text-center ">Desarrollado por <a href="http://www.lines.edu.ar">LINES</a> 2018</p></div>
+    <!-- Footer -->
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item">
+                            <a href="#">About</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Contacto</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Terminos de Uso</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Privacidad</a>
+                        </li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; Grupo 8 Diseño de Sistemas.</p>
+                </div>
+                <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item mr-3">
+                            <a href="#">
+                                <i class="fab fa-facebook fa-2x fa-fw"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item mr-3">
+                            <a href="#">
+                                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-instagram fa-2x fa-fw"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-              
-        
-      </div>
     </footer>
 
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JavaScript for this theme -->
-    <script src="{{ asset('js/scrolling-nav.js') }}"></script>
-
-    <style type="text/css">
-      /* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  margin-bottom: 78px; /* Margin bottom by footer height */
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 78px; /* Set the fixed height of the footer here */
-  line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
-}
-
-
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
-
-
-    </style>
-
-  </body>
+</body>
 
 </html>

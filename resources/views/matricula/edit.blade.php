@@ -38,6 +38,23 @@
               </div>
 
           </div>
+
+          <div class="row">
+            <div class="col-12 col-md-12">
+              <label for="users_id">Alumno:</label>
+              <select class="form-control" id="users_id" name="users_id">
+                <option value="">Seleccione una Alumno</option>
+                @foreach($users as $user)
+                  <option value="{{ $user->id }}"
+                    @if(isset($enrollment->user) and $enrollment->user->id==$user->id)
+                      selected
+                    @endif
+                    >{{ $user->name }}
+                  </option>
+                @endforeach
+              </select>
+            </div> 
+          </div> 
   
 
           <div class="row">

@@ -53,7 +53,14 @@ class User extends Authenticatable
     //  Relacion de Uno a Muchos
     //  Lado de muchos
     {
-        return $this->hasMany('App\ScholarshipPerson');
+        return $this->belongsTo('App\ScholarshipPerson');
+    }
+
+    public function enrollments()
+    //  Relacion de Uno a Muchos
+    //  Lado de muchos
+    {
+        return $this->belongsTo('App\Enrollment');
     }
     
     public function cities(){

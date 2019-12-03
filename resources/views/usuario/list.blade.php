@@ -20,7 +20,7 @@
 
   <table class="table table-hover">
     <theader>
-    <tr><th>ID </th><th>Nombre</th><th>Apellido</th><th>DNI</th><th>Email</th><th>Telefono</th><th>Fecha de Nacimiento</th><th>Direccion</th>
+    <tr><th>ID </th><th>Nombre</th><th>Apellido</th><th>DNI</th><th>Email</th><th>Telefono</th><th>Fecha de Nacimiento</th><th>Direccion</th><th>Ciudad</th>
     @foreach($users as $user)
       <tr data-id="{{$user->id}}">
         <td>{{$user->id}}</td>
@@ -31,6 +31,11 @@
         <td>{{$user->phone}}</td>
         <td>{{$user->date_birth}}</td>
         <td>{{$user->street}} N°{{$user->number}}</td>
+        @foreach($cities as $city)
+        @if($city->city_id == $user->cities_id)
+        <td>{{$city['city_name']}}</td>
+        @endif
+        @endforeach
         <td>
           <a href='{{ url('usuario') }}/editar/{{$user->id}}' title="Editar"><i class="fa fa-edit"></i></a>
           <a href='#' title="Eliminar" class="btn-delete"><i class="fa fa-times"></i></a>

@@ -17,6 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::resource('cities', 'CityController');
+
 /*
 Route::resource('users', 'UserController');
 
@@ -26,7 +28,7 @@ Route::resource('years', 'YearController');
 
 Route::resource('departments', 'DepartmentController');
 
-Route::resource('cities', 'CityController');
+
 
 Route::resource('provinces', 'ProvinceController');
 

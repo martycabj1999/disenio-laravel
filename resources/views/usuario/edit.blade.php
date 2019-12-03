@@ -62,17 +62,6 @@
                 <input class="form-control" type="date" name="date_birth" id="date_birth" value="{{$users->date_birth}}" placeholder="Fecha de Nacimiento" />
               </div>
           </div>
-          <div class="row">
-              <div class="col-12 col-md-6">
-                <label for="street">Calle:</label>
-                <input class="form-control" type="text" name="street" id="street" value="{{$users->street}}" placeholder="Calle" />
-              </div>
-
-              <div class="col-12 col-md-6">
-                <label for="number">Numero:</label>
-                <input class="form-control" min="0"  type="number" name="number" id="number" value="{{$users->number}}" placeholder="Numero" />
-              </div>
-          </div>
 
           <div class="row">
             <div class="col-12 col-md-6">
@@ -93,17 +82,28 @@
               <label for="cities_id">Ciudad:</label>
               <select class="form-control" id="cities_id" name="cities_id">
                 <option value="">Seleccione una Ciudad</option>
-                @foreach($cities as $city)
+                <!--@foreach($cities as $city)
                   <option value="{{ $city->id }}"
                     @if(isset($users->city) and $users->city->id==$city->id)
                       selected
                     @endif
                     >{{ $city->city_name }}
                   </option>
-                @endforeach
+                @endforeach-->
               </select>
             </div>  
           </div>  
+          <div class="row">
+              <div class="col-12 col-md-6">
+                <label for="street">Calle:</label>
+                <input class="form-control" type="text" name="street" id="street" value="{{$users->street}}" placeholder="Calle" />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="number">Numero:</label>
+                <input class="form-control" min="0"  type="number" name="number" id="number" value="{{$users->number}}" placeholder="Numero" />
+              </div>
+          </div>
 
           <div class="form-row mt-3">
 
@@ -117,6 +117,26 @@
 
           </div>
         </form>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+$(document).ready(function() {
+  $("#provinces_id").change(function () {
+    var prov_id = this.value;
+    $.get('{{url('api/cities')}}')
+    .done(function(data){
+      option='<option value="">Seleccione una Ciudad</option>';
+      for ( var i = 0, l = 18000; i < l; i++ ) {
+      if(data[i].province_id == prov_id) {
+        option+= '<option value="'+data[i].city_id+'">'+data[i].city_name+'</option> '
+      }
+      }
+      $('#cities_id').html(option);
+    });
+    
+  })
+});
+
+</script>
       </div>
   </div>
 </div>

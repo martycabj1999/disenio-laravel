@@ -103,7 +103,7 @@
         <footer class="footer">
           <div class="container">
             <div class="row">
-              <div class="col"><p class="mt-4 text-center ">Desarrollado por <a href="https://www.linkedin.com/in/martin-tito-gira-68636413a/">Martin Tito</a> 2019</p></div>
+              <div class="col"><p class="mt-4 text-center ">Desarrollado por <a href="https://www.linkedin.com/in/martin-tito-gira-68636413a/">Grupo 8 Diseño de Sistemas</a> 2019</p></div>
             </div>
 
 
