@@ -19,14 +19,14 @@
 
   <table class="table table-hover">
     <theader>
-    <tr><th>Numero </th><th>Fecha de Alta</th><th>Nombre</th><th>ID Beca</th><th>ID Division</th>
+    <tr><th>Numero </th><th>Fecha de Alta</th><th>Alumno</th><th>Beca</th><th>Division</th>
     @foreach($enrollments as $enrollment)
       <tr data-id="{{$enrollment->id}}">
         <td>{{$enrollment->number}}</td>
         <td>{{$enrollment->date_up}}</td>
         @foreach($users as $user)
         @if($user->id == $enrollment->users_id)
-        <td>{{$user['name']}}</td>
+        <td>{{$user['name']}} {{$user['lastname']}}</td>
         @endif
         @endforeach
         @foreach($scholarships as $scholarship)

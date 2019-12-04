@@ -73,9 +73,9 @@
               </select>
             </div>  
             <div class="col-12 col-md-6">
-              <label for="divisions_id">Ciudad:</label>
+              <label for="divisions_id">Division:</label>
               <select class="form-control" id="divisions_id" name="divisions_id">
-                <option value="">Seleccione una Ciudad</option>
+                <option value="">Seleccione una Division</option>
                 @foreach($divisions as $division)
                   <option value="{{ $division->id }}"
                     @if(isset($enrollment->division) and $enrollment->division->id==$division->id)
